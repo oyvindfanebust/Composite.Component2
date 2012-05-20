@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using Composite.Component2.Properties;
 
@@ -11,7 +12,7 @@ namespace Composite.Component2.Controllers
             return JavaScript(Resources.Component2);
         }
 
-        public ActionResult GetPersons(Guid[] ids)
+        public ActionResult GetPersons(IEnumerable<Guid> ids)
         {
             return Json(new
             {
@@ -29,7 +30,7 @@ namespace Composite.Component2.Controllers
                                   name = "Person 3"
                                 }
                 }
-            });
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }
