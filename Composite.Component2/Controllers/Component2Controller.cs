@@ -32,5 +32,10 @@ namespace Composite.Component2.Controllers
                 }
             }, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult UpdatePersons(dynamic persons)
+        {
+            return new HttpStatusCodeResult(200);
+        }
     }
 }
